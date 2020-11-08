@@ -22,7 +22,7 @@ Class PublicController extends Controller{
 	//login function
 	public function doLogIn(){
 		//from modal user
-		//$_SESSION["userId"] = User::LogIn($_POST["username"], $_POST["password"]);
+		$_SESSION["userId"] = User::LogIn($_POST["username"], $_POST["password"]);
 
 		if ($_SESSION["userId"])
 		{
@@ -32,7 +32,6 @@ Class PublicController extends Controller{
 			Errors::missingLogin();
 			//go to login
 			$this->goMsg("public","login","error=1");
-			//$this->loadView("views/3col_contentContainer.php", 1, "content");
 		}
 	}
 }

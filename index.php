@@ -2,6 +2,7 @@
 session_start();
 //files
 include("controllers/Controller.php");
+include("libs/DB.php");
 include("libs/Errors.php");
 include("models/User.php");
 include("models/ErrorMsg.php");
