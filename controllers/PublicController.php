@@ -34,4 +34,9 @@ Class PublicController extends Controller{
 			$this->goMsg("public","login","error=1");
 		}
 	}
+	public function doLogOut(){
+
+		unset($_SESSION["userId"]);
+		$this->go("public", "main");
+	}
 }

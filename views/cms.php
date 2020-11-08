@@ -1,1 +1,3 @@
-<h1>Secret information</h1>
+<?=$this->header?>
+<h1>Client information</h1>
+<!--End of cms-->

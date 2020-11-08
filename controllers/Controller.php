@@ -36,7 +36,7 @@ Class Controller{
 			$this->content .= $tempHTML;
 		}
     }
-
+	//does not append
     public function loadLastView($viewFile){
 
 		$this->bLastViewRun = true;

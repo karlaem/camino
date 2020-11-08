@@ -22,7 +22,7 @@ Class User {
 	{
 		$arrUser = DB::query("SELECT * FROM users WHERE username='".$username."' and password='".$password."'");
 
-		print_r($arrUser);
+		//print_r($arrUser);
 
 		if($arrUser)
 		{
