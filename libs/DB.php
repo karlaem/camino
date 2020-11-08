@@ -5,7 +5,7 @@ Class DB{
     var $debug = true;
     
     //conect to database
-	public function connect(){
+	static public function connect(){
 		$dbDetails = parse_ini_file("../dbw8.ini"); 
 		
 		return mysqli_connect($dbDetails["host"], $dbDetails["user"], $dbDetails["pass"], $dbDetails["dbname"]);

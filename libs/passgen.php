@@ -6,7 +6,7 @@ $passwordhash = password_hash($pass, PASSWORD_DEFAULT);
 
 echo $passwordhash;
 
-$success = password_verify($pass, '$2y$10$wJrENBtazW8b5vY5JSZxBOLUba7bqS7rPVe3hsDS6B1jb/cPIRUJS');
+$success = password_verify($pass, '$2y$10$.48/vqh6mAImOh11ZffBNuFSFNrTyrwFMLHS2/80y6ZdZa.dX7G4y');
 echo "<br>".$success;
 
 ?>

@@ -19,21 +19,40 @@ Class PublicController extends Controller{
 
 	}
 
-	//login function
+	//login function secure
 	public function doLogIn(){
+		$con = DB::connect();
+		//save variables from form
+		$username = $_POST["username"];
+		$password = $_POST["password"];
 		//from modal user
-		$_SESSION["userId"] = User::LogIn($_POST["username"], $_POST["password"]);
+		//capes special characters in a string
+		$sql = "SELECT * FROM users WHERE username='".mysqli_escape_string($con, $username)."'";
 
-		if ($_SESSION["userId"])
+		$results = mysqli_query($con, $sql);
+
+		$user = $results = mysqli_fetch_assoc($results);
+		
+		if ($user)
 		{
-			$this->go("user", "main"); // if details entered exist in the db allow user to login
+			if (password_verify($password, $user["password"])) 
+			{
+				echo "hello... ". $user["username"];
+				//save id in session
+				$_SESSION["userId"]=$user["id"];
+				new User($user);
+				//go to admin
+				$this->go("user", "main"); 
+			} else {
+				//go to login wrong password
+				$this->goMsg("public","login","error=1");
+			}
 		} else {
-			// if details entered do not exist in the db redirect user back to login form with error
-			Errors::missingLogin();
-			//go to login
-			$this->goMsg("public","login","error=1");
+			//go to login wrong user
+			$this->goMsg("public","login","error=2");
 		}
 	}
+
 	public function doLogOut(){
 
 		unset($_SESSION["userId"]);
