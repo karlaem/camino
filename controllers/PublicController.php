@@ -62,16 +62,42 @@ Class PublicController extends Controller{
 		$this->go("public", "main");
 	}
 
-	//add client
+	//insert subscribers
 	public function doSubscribe(){
-		$con = DB::connect();
-		var_dump($_POST);
-		//save variables from form
-		$first_name = $_POST["first_name"];
-		$last_name = $_POST["last_name"];
-		$email = $_POST["email"];
-		$phone= $_POST["phone"];
-		$age = $_POST["age"];
-		$countryId = $_POST["countryId"];
+		//image security
+		$timestamp =round(microtime(true) * 1000);
+        $target_dir = "assets/"; 
+        $target_file = $target_dir.basename($timestamp.$_FILES["image"]["name"]);
+        $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+		$fileTypeAllowed = array('pdf', 'png', 'jpeg', 'jpg');
+		if(!in_array($ext, $fileTypeAllowed))
+        {
+            echo ("file type not allowed");
+            $target_file = null;
+
+        } else {
+
+            move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+		}
+		
+		//if I have variables in post
+		if($_POST["first_name"]&& $_POST["last_name"]){
+			$con = DB::connect();
+			var_dump($_POST);
+			//save variables from form
+			$first_name = $_POST["first_name"];
+			$last_name = $_POST["last_name"];
+			$email = $_POST["email"];
+			$phone= $_POST["phone"];
+			$age = $_POST["age"];
+			$countryId = $_POST["countryId"];
+			$sql = "INSERT INTO clients(first_name, last_name, email, phone, age, countryId, image) values ('".$first_name."','".$last_name."','".$email."','".$phone."','".$age."','".$countryId."','".$target_file."')";
+			echo $sql;
+			mysqli_query($con, $sql);
+			$this->goMsg("public","main","success=1");
+		}else{
+			//go home
+			$this->go("public", "main");
+		}
 	}
 }

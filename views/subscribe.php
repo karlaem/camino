@@ -9,12 +9,23 @@
             if (isset($_GET["error"])){                        
             echo '<div class="error">something went wrong. Try Again</div>';
             }
+            if (isset($_GET["success"])){                        
+                echo '<div class="success">Thank you! your subscribtion was saved</div>';
+                }
             ?>
         </div>
 
-        <form method="POST" action="index.php" id="formSubscribe">
+        <form method="POST" action="index.php" id="formSubscribe" enctype="multipart/form-data">
         <input type="hidden" name="controller" value="public" /><!--go to publicController-->
         <input type="hidden" name="action" value="doSubscribe"/>
+
+            <div class="fieldgroup required">
+                <label>Click to add a photo</label>
+                <input type="file" name="image" id="image" placeholder="Click to add image">          
+                <div class="popup">                  
+                    <p>Add your photo</p>
+                </div>                    
+            </div><!--.fieldgroup-->
 
             <div class="fieldgroup required">
                 <label>Name</label>
