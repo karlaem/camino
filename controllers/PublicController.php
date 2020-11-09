@@ -5,7 +5,7 @@ Class PublicController extends Controller{
 
 	//load home page
 	public function main(){
-		$this->loadView("views/header.php");//add nav
+		$this->loadView("views/header.php",1,"nav");//add nav
 		$this->loadView("views/home.php");//go home
 		//add subscribe form
 		$this->loadData(Countries::getCountries(), "oCountry");

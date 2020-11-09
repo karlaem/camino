@@ -260,6 +260,7 @@ font-size: 15px;
 }
 /*client subs*/
 .subscribe{
+    margin: 50px auto;
     background-color: #ECEEF0; /*wind white*/
     padding: 30px;
     border:2px solid #ECEEF0;
@@ -366,4 +367,15 @@ font-size: 15px;
     width: 65%;
     height: 90%;
   }
+}
+.hero{
+  padding: 15px;
+  background-color: #E8DED3;/*beige*/
+  height: 60vh;
+}
+.herocontent a,.herocontent h1,.herocontent h2{
+  margin: 15px;
+}
+.herocontent h1{
+  font-size: 120px;
 }
