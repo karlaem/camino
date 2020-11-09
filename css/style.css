@@ -371,11 +371,16 @@ font-size: 15px;
 .hero{
   padding: 15px;
   background-color: #E8DED3;/*beige*/
-  height: 60vh;
+  min-height: 65vh;
 }
-.herocontent a,.herocontent h1,.herocontent h2{
+.herocontent a,.herocontent h1,.herocontent h2,.herocontent p{
   margin: 15px;
 }
 .herocontent h1{
-  font-size: 120px;
+  font-size: 4rem;
+}
+@media (min-width: 1024px){
+  .herocontent h1{
+    font-size:6rem;
+  }
 }
