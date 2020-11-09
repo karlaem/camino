@@ -11,7 +11,8 @@ Class UserController extends Controller {
         //load the header
         $this->loadView("views/header.php", 1 ,"header"); 
         //load the admin final view
-        $this->loadLastView("views/cms.php");        
+        $this->loadLastView("views/cms.php"); 
+        $this->loadLastView("views/main.php");       
     }
     //show a list of clients
     public function clients(){
@@ -27,7 +28,8 @@ Class UserController extends Controller {
         //load the header
         $this->loadView("views/header.php", 1 ,"header"); 
         //load the admin final view
-        $this->loadLastView("views/cms.php");   
+        $this->loadLastView("views/cms.php"); 
+        $this->loadLastView("views/main.php");  
     }
 
     //check login
