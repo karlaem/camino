@@ -1,6 +1,6 @@
 <?php
 //country table from https://blog.radwell.codes/2013/09/iso-3166-country-list-for-mysql/
-Class Country{
+Class Countries{
     public function __construct($data)
 	{
         $this->id = $data["id"];
@@ -20,7 +20,7 @@ Class Country{
 		foreach($countries as $country)
 		{
 			// create an instance / object for this SPECIFIC 
-			$clientArray[] = new Client($country); // put this  object onto the array
+			$clientArray[] = new Countries($country); // put this  object onto the array
         }
 		// return the list of objects
 		return $clientArray;
@@ -37,7 +37,7 @@ Class Country{
 		foreach($countries as $country)
 		{
 			// create an instance / object for this SPECIFIC 
-			$countryArray[] = new Client($country); // put this  object onto the array
+			$countryArray[] = new Countries($country); // put this  object onto the array
         }
 		// return the list of objects
 		return $countryArray;

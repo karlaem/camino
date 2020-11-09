@@ -7,9 +7,10 @@ Class PublicController extends Controller{
 	public function main(){
 		$this->loadView("views/header.php");//add nav
 		$this->loadView("views/home.php");//go home
-		$this->loadView("views/subscribe.php");//add subscribe form
+		//add subscribe form
+		$this->loadData(Countries::getCountries(), "oCountry");
+		$this->loadView("views/subscribe.php",); 
 		$this->loadLastView("views/main.php");
-
 	}
 
 	//load login page
@@ -63,6 +64,14 @@ Class PublicController extends Controller{
 
 	//add client
 	public function doSubscribe(){
-		
+		$con = DB::connect();
+		var_dump($_POST);
+		//save variables from form
+		$first_name = $_POST["first_name"];
+		$last_name = $_POST["last_name"];
+		$email = $_POST["email"];
+		$phone= $_POST["phone"];
+		$age = $_POST["age"];
+		$countryId = $_POST["countryId"];
 	}
 }

@@ -47,7 +47,18 @@
             </div><!--.fieldgroup-->
             <div class="fieldgroup required">
                 <label>Select Country</label>
-                <input type="text" name="Country" placeholder="Country"/>             
+                <select name="countryId">
+                <?php
+                if(isset($this->oCountry)){
+                    foreach ($this->oCountry as $country){
+                    ?>
+                    <option value="<?=$country->id?>"><?=$country->name?></option>
+                    <?php
+                    }
+                }
+                ?>
+                </select>
+             
                 <div class="popup">                  
                     <p>Add your Country</p>
                 </div>                    
@@ -60,6 +71,6 @@
     </div><!--.content-->
 </div><!--.margins-->
 
-<!--Validate form-->
-<script type="text/javascript" src="js/validate2.js"></script>  
+<!--Validate form
+<script type="text/javascript" src="js/validate2.js"></script> --> 
 <!--End of login-->

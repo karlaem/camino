@@ -39,6 +39,21 @@ Class Client{
     public static function getClient($id)
 	{
         $clients = DB::query("SELECT clients.*, country.code, country.name AS country FROM clients LEFT JOIN country ON clients.countryId = country.id WHERE clients.id=".$id);
+        //if no id given
+        if($clients == ""){
+            $clientArray =(object) array(
+                "id" => "0",
+                'first_name' => 'No client',
+                'last_name' => '',
+                'email' => '',
+                'age' => '',
+                'countryId' => '',
+                'image' => '',
+                'code' => '',
+                'country' => '',
+                'phone' => '');
+            return $clientArray;
+        }
 
         // acting as a factory
         // empty array to avoid errors when no assignments were found

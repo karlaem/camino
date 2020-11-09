@@ -83,7 +83,7 @@ Class Controller{
     }
     public function loadRoute($controller, $action, $variableName="content", $append=0)
     {
-        echo "<h1>Opened Controller: $controller";
+       //echo "<h1>Opened Controller: $controller";
         // create the controller name and the path to the controller file and save to varibales
         $controllerName = $controller."Controller"; // PublicController
         $controllerFile = "controllers/".$controllerName.".php";
@@ -96,7 +96,7 @@ Class Controller{
             $oController->$action();
             // therefore it has its own method and properties, as if you had called it directly. 
             // we know that the $oController->youraction() process creates and appends to $this->content... 
-            var_dump($oController);
+            //var_dump($oController);
         } 
         // save whatever we got from the oController content into a variable
         if ($append && isset($this->$variableName))
