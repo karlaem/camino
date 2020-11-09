@@ -5,8 +5,9 @@ Class PublicController extends Controller{
 
 	//load home page
 	public function main(){
-		$this->loadView("views/header.php");
-		$this->loadView("views/home.php");
+		$this->loadView("views/header.php");//add nav
+		$this->loadView("views/home.php");//go home
+		$this->loadView("views/subscribe.php");//add subscribe form
 		$this->loadLastView("views/main.php");
 
 	}
@@ -53,9 +54,15 @@ Class PublicController extends Controller{
 		}
 	}
 
+	//logout
 	public function doLogOut(){
 
 		unset($_SESSION["userId"]);
 		$this->go("public", "main");
+	}
+
+	//add client
+	public function doSubscribe(){
+		
 	}
 }

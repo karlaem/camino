@@ -12,6 +12,7 @@ Class Client{
         $this->image = $data["image"];
         $this->code = $data["code"];
         $this->country = $data["country"];
+        $this->phone = $data["phone"];
     }
 
     //client list
