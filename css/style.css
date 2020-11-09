@@ -253,10 +253,12 @@ font-size: 15px;
 .success{
     color: #06BDD4;/*water blue*/
 }
+/*validation*/
 .login{
     min-width: 300px;
     max-width: 500px;
 }
+/*client subs*/
 .subscribe{
     background-color: #ECEEF0; /*wind white*/
     padding: 30px;
@@ -305,4 +307,63 @@ font-size: 15px;
   width: 45%;
   margin: 10px;
 }
+}
+/*client subs*/
+/*cms*/
+.cmsmenu{
+  background: #ECEEF0; /*wind white*/
+  margin-top: 20px;
+  overflow:hidden;
+  padding: 30px;
+}
+
+.cmsmenu .left{
+  width: 30%;
+  float: left;
+
+}
+.cmsmenu .clientinfo{
+  width: 100%;
+  padding: 30px;
+  outline: 1px solid black;
+  outline-offset: -10px;
+}
+.cmsmenu a{
+ display: block;
+ text-decoration: none;
+ color: black;
+}
+.cmsmenu .clientnames{
+  position: relative;
+  min-width: 100%;
+  float: left;
+  padding: 15px;
+  outline: 1px solid black;
+  outline-offset: -10px;
+  background-color:#E8DED3;/*beige*/
+  
+}
+.cmsmenu .clientnames .clientnamelist{
+  position: relative;
+  width: 100%;
+  float: left;
+  padding: 15px;
+  outline: 1px solid black;
+  outline-offset: -10px;
+}
+@media (min-width: 1024px){
+  .cmsmenu .clientnames .clientnamelist{
+    width: 30%;
+    height: 100%;
+  }
+  .cmsmenu .clientnames{
+    min-width: 70%;
+    height: 60vh;
+  }
+  .cmsmenu .clientinfo{
+    position: absolute;
+    right: 15px;
+    width: 65%;
+    height: 90%;
+  }
 }
