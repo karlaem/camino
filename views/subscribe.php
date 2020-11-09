@@ -21,7 +21,8 @@
 
             <div class="fieldgroup required">
                 <label>Click to add a photo</label>
-                <input type="file" name="image" id="image" placeholder="Click to add image">          
+                <input type="file" name="image" id="image" placeholder="Click to add image">
+                <!--<div id="thePhoto" imgSrc="assets/" ></div>-->          
                 <div class="popup">                  
                     <p>Add your photo</p>
                 </div>                    
@@ -82,6 +83,8 @@
     </div><!--.content-->
 </div><!--.margins-->
 
-<!--Validate form
-<script type="text/javascript" src="js/validate2.js"></script> --> 
+<!--Validate form-->
+<script type="text/javascript" src="js/validate2.js"></script> 
+<!--upload image not done-->
+<!--<script type="text/javascript" src="js/uploadimage.js"></script>-->
 <!--End of login-->

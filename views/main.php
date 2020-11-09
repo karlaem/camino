@@ -26,7 +26,7 @@
     <!--googlefonts-->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Unica+One&display=swap" rel="stylesheet">
 
-    <title>Camino View</title>
+    <title>Camino View Patches Company</title>
 </head>
 <body>
     <?=$this->content?>
