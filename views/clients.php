@@ -1,10 +1,12 @@
+<div class="clientmenu">
 <?php
-if(isset($this->oClient)){
-    foreach ($this->oClient as $client){
+if(isset($this->oClients)){
+    foreach ($this->oClients as $client){
     ?>
-    <a href="#"><?=$client->first_name?></a>
+    <a href="index.php?controller=user&action=clients&clientid=<?=$client->id?>"><?=$client->first_name?></a>
     <?php
     }
 }
 ?>
+</div>
 <!--End of clients-->

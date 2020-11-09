@@ -16,9 +16,14 @@ Class UserController extends Controller {
     //show a list of clients
     public function clients(){
         //Client list
-        $this->loadData(Client::getClients(), "oClient");
+        $this->loadData(Client::getClients(), "oClients");
         //load clients
         $this->loadView("views/clients.php", 1, "clientlist"); 
+        //specific client data
+        if(isset($_GET["clientid"])){
+            $this->loadData(Client::getClient($_GET["clientid"]), "oClient");
+            $this->loadView("views/client.php", 1, "clientlist"); 
+        }
         //load the header
         $this->loadView("views/header.php", 1 ,"header"); 
         //load the admin final view

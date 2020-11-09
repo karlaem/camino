@@ -9,14 +9,35 @@ Class Client{
         $this->email = $data["email"];
         $this->age = $data["age"];
         $this->countryId = $data["countryId"];
+        $this->image = $data["image"];
+        $this->code = $data["code"];
+        $this->country = $data["country"];
     }
 
+    //client list
     public static function getClients()
 	{
         //get all clients
-        $clients = DB::query("SELECT * FROM clients"); 
+        //$clients = DB::query("SELECT * FROM clients"); 
         //client+country
-        //SELECT clients.*, country.code, country.name FROM clients LEFT JOIN country ON clients.countryId = country.id
+        $clients = DB::query("SELECT clients.*, country.code, country.name AS country FROM clients LEFT JOIN country ON clients.countryId = country.id");
+
+        // acting as a factory
+        // empty array to avoid errors when no assignments were found
+		$clientArray = array();
+		foreach($clients as $client)
+		{
+			// create an instance / object for this SPECIFIC 
+			$clientArray[] = new Client($client); // put this  object onto the array
+        }
+		// return the list of objects
+		return $clientArray;
+    }
+    
+    //1 client
+    public static function getClient($id)
+	{
+        $clients = DB::query("SELECT clients.*, country.code, country.name AS country FROM clients LEFT JOIN country ON clients.countryId = country.id WHERE clients.id=".$id);
 
         // acting as a factory
         // empty array to avoid errors when no assignments were found
