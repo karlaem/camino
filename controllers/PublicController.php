@@ -9,7 +9,7 @@ Class PublicController extends Controller{
 		$this->loadView("views/home.php");//go home
 		//add subscribe form
 		$this->loadData(Countries::getCountries(), "oCountry");
-		$this->loadView("views/subscribe.php",); 
+		$this->loadView("views/subscribe.php"); 
 		$this->loadLastView("views/main.php");
 	}
 
@@ -18,7 +18,6 @@ Class PublicController extends Controller{
 		$this->loadView("views/header.php");
 		$this->loadView("views/login.php");
 		$this->loadLastView("views/main.php");
-
 	}
 
 	//login function secure
@@ -39,7 +38,6 @@ Class PublicController extends Controller{
 		{
 			if (password_verify($password, $user["password"])) 
 			{
-				echo "hello... ". $user["username"];
 				//save id in session
 				$_SESSION["userId"]=$user["id"];
 				new User($user);
