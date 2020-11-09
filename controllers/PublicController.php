@@ -70,18 +70,17 @@ Class PublicController extends Controller{
 		$fileTypeAllowed = array('pdf', 'png', 'jpeg', 'jpg');
 		if(!in_array($ext, $fileTypeAllowed))
         {
-            echo ("file type not allowed");
+            //echo ("file type not allowed");
             $target_file = null;
 
         } else {
-
             move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 		}
 		
 		//if I have variables in post
 		if($_POST["first_name"]&& $_POST["last_name"]){
 			$con = DB::connect();
-			var_dump($_POST);
+			//var_dump($_POST);
 			//save variables from form
 			$first_name = $_POST["first_name"];
 			$last_name = $_POST["last_name"];
@@ -90,7 +89,7 @@ Class PublicController extends Controller{
 			$age = $_POST["age"];
 			$countryId = $_POST["countryId"];
 			$sql = "INSERT INTO clients(first_name, last_name, email, phone, age, countryId, image) values ('".$first_name."','".$last_name."','".$email."','".$phone."','".$age."','".$countryId."','".$target_file."')";
-			echo $sql;
+			//echo $sql;
 			mysqli_query($con, $sql);
 			$this->goMsg("public","main","success=1");
 		}else{

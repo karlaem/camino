@@ -268,7 +268,7 @@ font-size: 15px;
     border: none;
 }
 .subscribe .names input{
-    width: 45%;
+    width: 100%;
     margin: 10px;
 }
 .subscribe input{
@@ -285,6 +285,12 @@ font-size: 15px;
     padding: 3px;
     cursor: pointer;
 }
+.subscribe .ctabtn{
+  width: 50%;
+  margin: 0 auto;
+  border: none;
+}
+@media (min-width: 1024px) {
 .col-1{
   clear: both;
 }
@@ -293,7 +299,10 @@ font-size: 15px;
     float: left;
 }
 .subscribe .ctabtn{
-    width: 50%;
-    margin: 0 auto;
-    border: none;
+    width: 100%;
+}
+.subscribe .names input{
+  width: 45%;
+  margin: 10px;
+}
 }
