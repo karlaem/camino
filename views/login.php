@@ -1,4 +1,4 @@
-<div class="margins">
+<div class="margins login">
     <!--login form-->
     <div class="content form">
         <h1>Login</h1>

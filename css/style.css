@@ -181,3 +181,119 @@ h1,h2,.ctabtn{
     
 }
 /*end of logo*/
+/*form*/
+.form h1{
+text-align: center;
+font-size: 36px;
+}
+.form h2{
+font-size: 21px;
+font-weight: normal;
+text-align: center;
+}
+.form label{
+display: block;
+margin-bottom: 5px;
+font-size:21px;
+text-align: left;
+font-family: 'Unica One', cursive;
+}
+form {
+padding-top: 15px;
+}
+form .fieldgroup {
+padding-bottom: 10px;
+font-size: 21px;
+}
+form .fieldgroup input {
+width: 100%;
+font-size: 21px;
+padding: 3px;
+border: 1px solid black;
+}
+input:focus{
+    border: 1px solid  #C87D11; /*dark orange*/
+}
+.ctabtn{
+border: none;
+width: 100%;
+padding: 10px;
+font-size: 36px;
+transition: 0.3s ease;
+text-transform: uppercase;
+cursor: pointer;
+background: #2A3380; /*bright blue*/
+color: white;
+height: 55px;
+border: none;
+}
+.ctabtn:hover{
+background: #C87D11; /*dark orange*/
+color: white;
+border: none;
+}
+/*validation*/
+.popup {
+color:#F63D03;/*bright orange*/
+opacity: 0;
+transition: opacity 0.1s linear;
+border-radius: 3px;
+position: relative;
+margin-top: 3px;
+font-size: 10px;
+}
+.errors .popup {
+opacity: 1;
+}
+.error{
+color:#F63D03;/*bright orange*/
+transition: opacity 0.1s linear;
+font-size: 15px;
+}
+.success{
+    color: #06BDD4;/*water blue*/
+}
+.login{
+    min-width: 300px;
+    max-width: 500px;
+}
+.subscribe{
+    background-color: #ECEEF0; /*wind white*/
+    padding: 30px;
+    border:2px solid #ECEEF0;
+    outline: 1px solid black;
+    outline-offset: -10px;
+}
+.subscribe .imageload input{
+    border: none;
+}
+.subscribe .names input{
+    width: 45%;
+    margin: 10px;
+}
+.subscribe input{
+    background-color: #ECEEF0;
+}
+.subscribe select{
+    background-color: #ECEEF0;
+    border: 1px solid black;
+    padding: 3px;
+}
+.subscribe .inputfile{
+    background-color: #ECEEF0;
+    border: 1px solid black;
+    padding: 3px;
+    cursor: pointer;
+}
+.col-1{
+  clear: both;
+}
+.col-2{
+    width: 50%;
+    float: left;
+}
+.subscribe .ctabtn{
+    width: 50%;
+    margin: 0 auto;
+    border: none;
+}
